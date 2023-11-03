@@ -22,8 +22,8 @@ DOTFILES=(
   .vimrc
   .vale.ini
 )
-mkdir -p .config
-git clone $DOTFILES_REPO $DOTFILES_PATH
+mkdir -p .config && \
+git clone $DOTFILES_REPO $DOTFILES_PATH && \
 for i in $DOTFILES; do
   ln -s $DOTFILES_PATH/$i ~/$i
 done

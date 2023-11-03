@@ -4,9 +4,8 @@
 # TODO steam? (might depend on rpmfusion)
 
 # packages
-PACKAGES=$(awk '/^-/ {print $2}' packages.yaml)
-sudo dnf remove -y fedora-chromium-config
-sudo dnf upgrade -y
+sudo dnf remove -y fedora-chromium-config && \
+sudo dnf upgrade -y && \
 sudo dnf install -y \
   alacritty \
   firefox \
@@ -52,17 +51,17 @@ sudo dnf install -y \
 # services
 sudo systemctl disable --now \
   packagekit \
-  raid-check.timer
+  raid-check.timer && \
 sudo systemctl enable --now \
   sshd
 
 # UPS configuration
-sudo dnf install -y nut
-sudo mkdir -p /etc/nut
+sudo dnf install -y nut && \
+sudo mkdir -p /etc/nut && \
 sudo cp ups.conf /etc/nut/ups.conf
 
 # tailscale
-sudo dnf config-manager --add-repo https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-sudo dnf install -y tailscale
-sudo systemctl enable --now tailscaled
+sudo dnf config-manager --add-repo https://pkgs.tailscale.com/stable/fedora/tailscale.repo && \
+sudo dnf install -y tailscale && \
+sudo systemctl enable --now tailscaled && \
 echo "Remember to run: sudo tailscale up"
