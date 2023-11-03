@@ -6,7 +6,7 @@ mkdir -p \
 
 # dotfiles
 DOTFILES_REPO="https://github.com/gjbianco/dotfiles"
-DOTFILES_PATH="~/bin/dotfiles"
+DOTFILES_PATH="$HOME/bin/dotfiles"
 DOTFILES=(
   .config/fish/
   .config/sway/
@@ -21,7 +21,7 @@ DOTFILES=(
 mkdir -p .config && \
 git clone $DOTFILES_REPO $DOTFILES_PATH
 for i in $DOTFILES; do
-  ln -s $HOME/$DOTFILES_PATH/$i ~/$i
+  ln -s $DOTFILES_PATH/$i $HOME/$i
 done
 
 # switch to fish shell
