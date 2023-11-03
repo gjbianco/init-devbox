@@ -19,7 +19,7 @@ DOTFILES=(
   .vale.ini
 )
 mkdir -p .config && \
-git clone $DOTFILES_REPO $DOTFILES_PATH && \
+git clone $DOTFILES_REPO $DOTFILES_PATH
 for i in $DOTFILES; do
   ln -s $HOME/$DOTFILES_PATH/$i ~/$i
 done
