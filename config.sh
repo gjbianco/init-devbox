@@ -8,10 +8,10 @@ mkdir -p \
 DOTFILES_REPO="https://github.com/gjbianco/dotfiles"
 DOTFILES_PATH="$HOME/bin/dotfiles"
 DOTFILES=(
-  ".config/fish"
-  ".config/sway"
-  ".config/waybar"
-  ".config/alacritty"
+  ".config/fish/"
+  ".config/sway/"
+  ".config/waybar/"
+  ".config/alacritty/"
   ".gitconfig"
   ".gitignore_global"
   ".tmux.conf"
@@ -21,8 +21,10 @@ DOTFILES=(
 mkdir -p .config && \
 git clone $DOTFILES_REPO $DOTFILES_PATH
 for i in "${DOTFILES[@]}"; do
-  echo "Symlinking $HOME/$i -> $DOTFILES_PATH/$i"
-  ln -s $DOTFILES_PATH/$i $HOME/$i
+  source_path="$DOTFILES_PATH/${i%/}"  # Remove trailing slash
+  target_path="$HOME/$i"
+  echo "Symlinking $target_path -> $source_path"
+  ln -s "$source_path" "$target_path"
 done
 
 # switch to fish shell
