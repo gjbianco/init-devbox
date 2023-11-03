@@ -32,18 +32,15 @@ sudo dnf install -y \
   zathura \
   zathura-plugins-all \
   zathura-fish-completion \
-  sway wm \
   dunst \
   sway \
   swayidle \
   swaylock \
   waybar \
-  work \
   ansible \
   asciidoctor \
   podman \
   pre-commit \
-  python3-dev \
   util-linux-user \
   xrandr \
   libappindicator-gtk3
