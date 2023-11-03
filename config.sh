@@ -8,15 +8,15 @@ mkdir -p \
 DOTFILES_REPO="https://github.com/gjbianco/dotfiles"
 DOTFILES_PATH="$HOME/bin/dotfiles"
 DOTFILES=(
-  .config/fish
-  .config/sway
-  .config/waybar
-  .config/alacritty
-  .gitconfig
-  .gitignore_global
-  .tmux.conf
-  .vimrc
-  .vale.ini
+  ".config/fish"
+  ".config/sway"
+  ".config/waybar"
+  ".config/alacritty"
+  ".gitconfig"
+  ".gitignore_global"
+  ".tmux.conf"
+  ".vimrc"
+  ".vale.ini"
 )
 mkdir -p .config && \
 git clone $DOTFILES_REPO $DOTFILES_PATH
