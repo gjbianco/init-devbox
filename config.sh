@@ -24,7 +24,7 @@ for i in "${DOTFILES[@]}"; do
   source_path="$DOTFILES_PATH/${i%/}"  # Remove trailing slash
   target_path="$HOME/$i"
   echo "Symlinking $target_path -> $source_path"
-  ln -s "$source_path" "$target_path"
+  ln -s -f "$source_path" "$target_path"
 done
 
 # switch to fish shell
