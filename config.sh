@@ -21,7 +21,7 @@ DOTFILES=(
 mkdir -p .config && \
 git clone $DOTFILES_REPO $DOTFILES_PATH && \
 for i in $DOTFILES; do
-  ln -s $DOTFILES_PATH/$i ~/$i
+  ln -s $HOME/$DOTFILES_PATH/$i ~/$i
 done
 
 # switch to fish shell
