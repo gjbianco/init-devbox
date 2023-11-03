@@ -8,10 +8,10 @@ mkdir -p \
 DOTFILES_REPO="https://github.com/gjbianco/dotfiles"
 DOTFILES_PATH="$HOME/bin/dotfiles"
 DOTFILES=(
-  .config/fish/
-  .config/sway/
-  .config/waybar/
-  .config/alacritty/
+  .config/fish
+  .config/sway
+  .config/waybar
+  .config/alacritty
   .gitconfig
   .gitignore_global
   .tmux.conf
