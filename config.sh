@@ -21,6 +21,7 @@ DOTFILES=(
 mkdir -p .config && \
 git clone $DOTFILES_REPO $DOTFILES_PATH
 for i in $DOTFILES; do
+  echo "Symlinking $HOME/$i -> $DOTFILES_PATH/$i"
   ln -s $DOTFILES_PATH/$i $HOME/$i
 done
 
